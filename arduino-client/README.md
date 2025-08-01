@@ -1,4 +1,3 @@
-````markdown
 # Arduino Nicla Vision Micropython Client
 
 This repository contains a Micropython script designed to run on the Arduino Nicla Vision (OpenMV-based) board. The script:
@@ -202,7 +201,7 @@ This repository contains a Micropython script designed to run on the Arduino Nic
 
        gc.collect()               # free any leftover
        time.sleep_ms(FRAME_DELAY)
-````
+   ````
 
 4. **Install the FOMO Face Detection Model**
 
