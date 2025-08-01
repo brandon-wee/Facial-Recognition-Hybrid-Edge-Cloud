@@ -1,4 +1,3 @@
-````markdown
 # Face Recognition API
 
 This repository contains a FastAPI-based Face Recognition API leveraging [InsightFace](https://github.com/deepinsight/insightface) for face embedding extraction and [MongoDB](https://www.mongodb.com/) for storing and updating user embeddings. The service allows you to:
@@ -38,7 +37,7 @@ This repository contains a FastAPI-based Face Recognition API leveraging [Insigh
    ```bash
    git clone https://github.com/yourusername/face-recognition-api.git
    cd face-recognition-api
-````
+   ```
 
 2. **Create a virtual environment**
 
