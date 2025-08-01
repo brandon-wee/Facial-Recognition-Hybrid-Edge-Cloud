@@ -1,0 +1,50 @@
+:root {
+  /* Light theme variables */
+  --bg: #f5f5f5;
+  --bgSoft: #ffffff;
+  --text: #202020;
+  --textSoft: #555555;
+  --border: #e0e0e0;
+  --primary: #5555ff;
+  --secondary: #7878ff;
+  --error: #ff5555;
+  --success: #55ff55;
+  --hoverColor: #e0e0e0;
+}
+
+[data-theme='dark'] {
+  /* Dark theme variables */
+  --bg: #151c2c;
+  --bgSoft: #182237;
+  --text: #ffffff;
+  --textSoft: #b7bac1;
+  --border: #2e374a;
+  --primary: #5555ff;
+  --secondary: #7878ff;
+  --error: #ff5555;
+  --success: #55ff55;
+  --hoverColor: #2e374a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.theme {
+  transition: all 0.3s ease;
+}
+
+/* Add more global styles as needed */

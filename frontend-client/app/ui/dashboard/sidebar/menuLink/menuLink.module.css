@@ -1,0 +1,42 @@
+.container {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0px;
+  border-radius: 10px;
+}
+
+.container:hover,
+.active {
+  background-color: var(--bg);
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 20px;
+  color: var(--text);
+}
+
+.text {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.text.active {
+  font-weight: bold;
+}
+
+.text:hover {
+  font-weight: bold;
+  color: var(--text);
+}
+
+.text.active:hover {
+  color: var(--text);
+}
+
+.text.active:hover {
+  font-weight: bold;
+  color: var(--text);
+}

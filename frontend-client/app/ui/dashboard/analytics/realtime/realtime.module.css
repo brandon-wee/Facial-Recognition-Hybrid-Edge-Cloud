@@ -1,0 +1,737 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 28px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.summary {
+  color: var(--textSoft);
+  font-size: 15px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.refreshButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refreshButton:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.refreshing {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.rotating {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.apiStatus {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+.statusError {
+  background-color: #F44336;
+  animation: errorPulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+@keyframes errorPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(244, 67, 54, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 67, 54, 0);
+  }
+}
+
+.connected {
+  color: #4CAF50;
+}
+
+.disconnected {
+  color: #F44336;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.endpointChanged {
+  margin-left: 5px;
+  font-size: 12px;
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #FFC107;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.retrying {
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* Stat Cards */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.statCard {
+  background-color: var(--bgSoft);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.peopleCard {
+  border-left: 4px solid #00CED1;
+}
+
+.fpsCard {
+  border-left: 4px solid #20B2AA;
+}
+
+.confidenceCard {
+  border-left: 4px solid #FF8C00;
+}
+
+.deviceCard {
+  border-left: 4px solid #9370DB;
+}
+
+.statIconWrapper {
+  width: 50px;
+  height: 50px;
+  background-color: var(--bg);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.peopleCard .statIconWrapper {
+  background-color: rgba(0, 206, 209, 0.1);
+  color: #00CED1;
+}
+
+.fpsCard .statIconWrapper {
+  background-color: rgba(32, 178, 170, 0.1);
+  color: #20B2AA;
+}
+
+.confidenceCard .statIconWrapper {
+  background-color: rgba(255, 140, 0, 0.1);
+  color: #FF8C00;
+}
+
+.deviceCard .statIconWrapper {
+  background-color: rgba(147, 112, 219, 0.1);
+  color: #9370DB;
+}
+
+.statIcon {
+  font-size: 24px;
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.statContent h3 {
+  font-size: 14px;
+  color: var(--textSoft);
+  margin-bottom: 4px;
+}
+
+.statNumber {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Main Content Area */
+.mainContent {
+  margin-top: 10px;
+}
+
+.contentColumns {
+  display: flex;
+  gap: 20px;
+}
+
+.leftColumn {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rightColumn {
+  flex: 2;
+}
+
+/* Section Cards */
+.sectionCard {
+  background-color: var(--bgSoft);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Current Detection */
+.personsContainer {
+  padding: 20px;
+}
+
+.noPersonsDetected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  color: var(--textSoft);
+  text-align: center;
+}
+
+.emptyIcon {
+  opacity: 0.3;
+  margin-bottom: 15px;
+}
+
+.personsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.personCard {
+  background-color: var(--bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.personCard:hover {
+  transform: translateY(-5px);
+}
+
+.personImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.noImagePlaceholder {
+  width: 100%;
+  height: 150px;
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textSoft);
+  font-size: 14px;
+}
+
+.personDetails {
+  padding: 15px;
+}
+
+.personName {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.unknownPerson {
+  color: #FFA726;
+}
+
+.confidenceBar {
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.confidenceFill {
+  height: 100%;
+  border-radius: 3px;
+  background-color: #00CED1;
+  transition: width 0.5s ease;
+}
+
+.highConfidence {
+  background-color: #4CAF50;
+}
+
+.mediumConfidence {
+  background-color: #FF9800;
+}
+
+.lowConfidence {
+  background-color: #F44336;
+}
+
+.confidenceLabel {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 12px;
+  color: var(--textSoft);
+}
+
+/* Person History */
+.personsHistoryContainer {
+  height: 500px;
+  overflow-y: auto;
+}
+
+.personsList {
+  padding: 10px;
+}
+
+.personHistoryItem {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 15px;
+  margin-bottom: 10px;
+  background-color: var(--bg);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.personHistoryItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.personHistoryItem.selected {
+  background-color: rgba(0, 128, 128, 0.15);
+  border: 1px solid rgba(0, 128, 128, 0.3);
+}
+
+.personThumbnail {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.personThumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.noThumbnail {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bgSoft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textSoft);
+  font-size: 10px;
+}
+
+.personHistoryDetails {
+  flex: 1;
+}
+
+.personHistoryName {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.personHistoryMeta {
+  display: flex;
+  gap: 15px;
+  font-size: 12px;
+  color: var(--textSoft);
+}
+
+.personConfidence {
+  display: flex;
+  align-items: center;
+}
+
+.personTime {
+  display: flex;
+  align-items: center;
+}
+
+.deletePersonBtn {
+  background-color: transparent;
+  color: var(--textSoft);
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.personHistoryItem:hover .deletePersonBtn {
+  opacity: 1;
+}
+
+.deletePersonBtn:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #F44336;
+}
+
+.clearAllBtn {
+  background-color: transparent;
+  color: var(--textSoft);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clearAllBtn:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #F44336;
+  border-color: rgba(244, 67, 54, 0.3);
+}
+
+/* Person Detail */
+.personDetail {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  color: var(--textSoft);
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+.personDetailContent {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.personDetailImage {
+  flex: 2;
+}
+
+.detailImage {
+  width: 100%;
+  border-radius: 8px;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.noDetailImage {
+  width: 100%;
+  height: 200px;
+  background-color: var(--bg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textSoft);
+}
+
+.personDetailInfo {
+  flex: 3;
+}
+
+.detailName {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.detailItems {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.detailLabel {
+  color: var(--textSoft);
+}
+
+.detailValue {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Charts Section */
+.chartsSection {
+  margin-top: 10px;
+}
+
+.chartsSectionHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.chartsSectionHeader h2 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.chartCard {
+  background-color: var(--bgSoft);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chartHeader {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chartHeader h3 {
+  font-size: 16px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chartContainer {
+  padding: 10px;
+  height: 250px;
+}
+
+/* Debug Info */
+.debugInfo {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--textSoft);
+}
+
+.debugInfo h4 {
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.debugGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.debugItem {
+  padding: 5px;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .chartsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .contentColumns {
+    flex-direction: column;
+  }
+  
+  .chartsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .personDetailContent {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .headerRight {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .debugGrid {
+    grid-template-columns: 1fr;
+  }
+}

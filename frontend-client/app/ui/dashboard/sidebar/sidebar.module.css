@@ -1,0 +1,227 @@
+.container{
+  position: slide;
+  top: 40px;
+  background-color: var(--bgSoft);
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.userImage{
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary, #5555ff);
+}
+
+.userDetail{
+  display: flex;
+  flex-direction: column;
+}
+
+.username{
+  font-weight: 500;
+  color: var(--text);
+}
+
+.userTitle{
+  font-size: 12px;
+  color: var(--textSoft);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--text);
+  background-color: var(--bgSoft);
+  border-radius: 10px;
+}
+
+.listItem{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.listItem:hover{
+  background-color: var(--bgSoft);
+  cursor: pointer;
+}
+
+.cat{
+  color: var(--textSoft);
+  font-weight: bold;
+  font-size: 14px;
+  margin: 20px 0px 5px 0px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--bgSoft);
+}
+
+.cat.list:hover{
+  background-color: var(--bgSoft);
+  cursor: pointer;
+}
+
+.profileCard {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.profileCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatarContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.userImage {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.statusIndicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 12px;
+  border-radius: 50%;
+  background-color: #333;
+  padding: 2px;
+  border: 2px solid rgba(255,255,255,0.8);
+}
+
+.online {
+  color: #4caf50;
+}
+
+.userDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.username {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.userRole {
+  margin-top: 2px;
+}
+
+.adminBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #ffb74d;
+  font-weight: 500;
+}
+
+.userTitle {
+  font-size: 13px;
+  color: #bbb;
+}
+
+.profileContainer {
+  position: relative;
+  margin: 12px 0;
+  padding: 12px;
+  background: transparent; /* Using same as background */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.profileContainer:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.avatarWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.statusDot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  bottom: 2px;
+  right: 2px;
+}
+
+.profileInfo {
+  flex: 1;
+  min-width: 0; /* Ensures text truncation works */
+}
+
+.profileName {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.roleBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  color: var(--textSoft);
+}
+
+/* Admin badge styling */
+.profileInfo:has(.roleBadge:has(svg)) .roleBadge {
+  color: #ffb74d;
+}

@@ -1,0 +1,103 @@
+.container {
+  background-color: var(--bgSoft);
+  border-radius: 10px;
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--textSoft);
+  margin: 0;
+}
+
+.chartWrapper {
+  flex: 1;
+  min-height: 500px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.chartBar:hover {
+  filter: brightness(1.1);
+}
+
+.customTooltip {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: var(--text);
+  max-width: 300px;
+}
+
+.tooltipLabel {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--text);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 4px;
+}
+
+.tooltipData {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+
+.loadingContainer, .noDataContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  text-align: center;
+  color: var(--textSoft);
+}
+
+.loadingContainer {
+  font-size: 16px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  font-size: 16px;
+  color: #d32f2f;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.noDataContainer p {
+  margin: 8px 0;
+}
+
+.noDataContainer p:first-child {
+  font-weight: 500;
+  font-size: 18px;
+}

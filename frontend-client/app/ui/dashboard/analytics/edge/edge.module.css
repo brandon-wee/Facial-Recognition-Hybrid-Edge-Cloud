@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--text);
+  font-size: 24px;
+}
+
+.addButton {
+  padding: 10px 20px;
+  background-color: var(--primary, #5555ff);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deviceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.deviceCard {
+  background-color: var(--bgSoft);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.deviceCard:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.deviceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.online {
+  background-color: rgba(0, 255, 0, 0.1);
+  color: green;
+}
+
+.offline {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: red;
+}
+
+.deviceDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--textSoft);
+}
+
+.deviceDetails span {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.deviceActions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.viewButton, .configButton {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.viewButton {
+  background-color: var(--primary, #5555ff);
+  color: white;
+}
+
+.configButton {
+  background-color: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--textSoft);
+}

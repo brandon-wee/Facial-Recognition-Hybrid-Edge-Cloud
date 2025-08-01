@@ -1,0 +1,221 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 20px;
+  background-color: var(--bgSoft);
+  border-radius: var(--borderRadius);
+  margin-top: 20px;
+  box-shadow: var(--boxShadow);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: var(--text);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.refreshButton, .clearButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.refreshButton {
+  background-color: var(--primary);
+}
+
+.refreshButton:hover {
+  background-color: var(--primaryHover);
+}
+
+.clearButton {
+  background-color: #f44336;
+}
+
+.clearButton:hover {
+  background-color: #d32f2f;
+}
+
+.refreshButton:disabled, .clearButton:disabled {
+  background-color: var(--disabled);
+  cursor: not-allowed;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--borderRadius);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.lastUpdated {
+  margin-left: auto;
+  color: var(--textSoft);
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.table thead tr {
+  background-color: var(--bg);
+}
+
+.table th {
+  color: var(--textSoft);
+  font-weight: 500;
+}
+
+.table tbody tr {
+  transition: var(--transition);
+}
+
+.table tbody tr:hover {
+  background-color: var(--bg);
+}
+
+/* Person styling */
+.person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.personImage {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--bgSoft);
+}
+
+/* Status styling */
+.statusBadge {
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statusBadge.known {
+  background-color: var(--bgSuccess);
+  color: var(--success);
+}
+
+.statusBadge.unknown {
+  background-color: var(--bgWarning);
+  color: var(--warning);
+}
+
+/* Admin badge styling */
+.adminBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Active status badges */
+.activeBadge {
+  color: var(--success);
+  font-weight: 500;
+}
+
+.inactiveBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--disabled);
+}
+
+/* Loading and no results styles */
+.loadingIndicator {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--textSoft);
+}
+
+.noResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  color: var(--textSoft);
+  gap: 10px;
+}
+
+.noResults svg {
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+/* Spinning animation */
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Row styling based on status */
+.table tbody tr.known {
+  border-left: 3px solid var(--success);
+}
+
+.table tbody tr.unknown {
+  border-left: 3px solid var(--warning);
+}
+
+/* Debug section styles */
+.debugSection {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: var(--bgSoft);
+  border-radius: var(--borderRadius);
+}

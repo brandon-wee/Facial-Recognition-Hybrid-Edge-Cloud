@@ -1,0 +1,196 @@
+:root {
+  /* Base colors and theme settings */
+  --bg: #151c2c;
+  --bgSoft: #182237;
+  --bgDark: #111827;
+  --text: white;
+  --textSoft: #b7bac1;
+  --border: #2e374a;
+  
+  /* UI Components */
+  --borderRadius: 8px;
+  --boxShadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --hoverColor: #2e374a;
+  
+  /* Status colors */
+  --primary: #5555ff;
+  --primaryHover: #4040e0;
+  --secondary: #7878ff;
+  --error: #ff5555;
+  --errorHover: #e04040;
+  --success: #55ff55; 
+  --successHover: #40e040;
+  --warning: #f39c12;
+  --warningHover: #e67e22;
+  --disabled: #777;
+  
+  /* Background variations */
+  --bgPrimary: rgba(85, 85, 255, 0.2);
+  --bgSuccess: rgba(85, 255, 85, 0.2);
+  --bgDanger: rgba(255, 85, 85, 0.2);
+  --bgWarning: rgba(243, 156, 18, 0.2);
+  
+  /* Camera specific */
+  --dark: #111;
+  --darkBg: #000;
+}
+
+/* Light theme - Complementing dark theme colors */
+:root.light {
+  /* Base colors that complement dark theme */
+  --bg: #f0f4fa;
+  --bgSoft: #e1e8f5;
+  --bgDark: #d0d9eb;
+  --text: #151c2c;
+  --textSoft: #3a4a6b;
+  --border: #c0cbd9;
+  --hoverColor: #d0d9eb;
+  
+  /* Status colors - Same hue family as dark theme */
+  --primary: #4747d1;
+  --primaryHover: #3939b3;
+  --secondary: #6868db;
+  --error: #e04040;
+  --errorHover: #c53030;
+  --success: #40c040; 
+  --successHover: #35a035;
+  --warning: #e67e22;
+  --warningHover: #d35400;
+  --disabled: #a0a0a0;
+  
+  /* Background variations - adjusted opacity for light background */
+  --bgPrimary: rgba(71, 71, 209, 0.15);
+  --bgSuccess: rgba(64, 192, 64, 0.15);
+  --bgDanger: rgba(224, 64, 64, 0.15);
+  --bgWarning: rgba(230, 126, 34, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base HTML elements */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  transition: var(--transition);
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0.75em;
+  color: var(--text);
+}
+
+p {
+  margin-bottom: 1.2rem;
+  color: var(--textSoft);
+}
+
+/* Links */
+a {
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+a:active {
+  transform: translateY(1px);
+}
+
+/* Lists */
+ul, ol {
+  list-style-position: inside;
+  margin-bottom: 1rem;
+}
+
+/* Forms */
+input, button, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+  background-color: var(--bgSoft);
+  border: 1px solid var(--border);
+  border-radius: var(--borderRadius);
+  padding: 0.6rem 1rem;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--textSoft);
+  box-shadow: 0 0 0 2px rgba(98, 143, 228, 0.2);
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--bgSoft);
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Scrollbar styling (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bgSoft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--textSoft);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text);
+}

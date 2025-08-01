@@ -1,0 +1,196 @@
+.container {
+  background-color: var(--bgSoft);
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.pageHeader {
+  margin-bottom: 25px;
+}
+
+.title {
+  font-size: 24px;
+  color: var(--textSoft);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: var(--text);
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.addButton {
+  padding: 10px 20px;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.addButton:hover {
+  background-color: #006666;
+}
+
+.addIcon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.tableWrapper {
+  background-color: var(--bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #2e374a;
+}
+
+.table th {
+  font-weight: 500;
+  color: var(--textSoft);
+  background-color: var(--bgSoft);
+}
+
+.table tbody tr:hover {
+  background-color: var(--bgSoft);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userImage {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userName {
+  font-weight: 500;
+}
+
+.emailCell {
+  font-size: 14px;
+  color: var(--textSoft);
+}
+
+.roleTag {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.adminRole {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+}
+
+.clientRole {
+  background-color: rgba(33, 150, 243, 0.1);
+  color: #2196f3;
+}
+
+.statusIndicator {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.activeStatus {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+}
+
+.inactiveStatus {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.view {
+  background-color: teal;
+}
+
+.delete {
+  background-color: #f44336;
+}
+
+.paginationWrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 1024px) {
+  .table {
+    min-width: 800px;
+  }
+  
+  .tableWrapper {
+    overflow-x: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  
+  .top {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+}

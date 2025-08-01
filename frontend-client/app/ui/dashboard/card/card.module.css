@@ -1,0 +1,46 @@
+.container {
+  background-color: var(--bgSoft);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.container:hover{
+  background-color: --var(--bgSoft);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.number {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.detail {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.subText {
+  font-size: 14px;
+  color: var(--textSoft);
+  margin-bottom: 5px;
+}
+
+.positive {
+  color: lime;
+}
+
+.negative {
+  color: red;
+}
