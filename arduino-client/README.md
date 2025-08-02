@@ -372,7 +372,6 @@ MIN_CONFIDENCE = 0.4                     # FOMO confidence threshold (0.0–1.0)
 micropython-nicla-vision-client/
 ├── main.py           # Micropython script (paste into OpenMV IDE)
 ├── README.md         # This file
-└── LICENSE           # (Optional) License file if you choose to include one
 ```
 
 * **`main.py`**
@@ -380,12 +379,6 @@ micropython-nicla-vision-client/
 
 * **`README.md`**
   Describes setup, configuration, and usage instructions.
-
----
-
-## License
-
-This project is released under the [MIT License](LICENSE).
 
 ---
 
