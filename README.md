@@ -66,3 +66,6 @@ cd backend-client
 cat README.md
 
 Don't forget to like and subscribe!
+```
+
+I contribute so hard to this repo it's crazy
