@@ -64,3 +64,5 @@ cd face-recognition-suite
 # Pick a subfolder and follow its README
 cd backend-client
 cat README.md
+
+Don't forget to like and subscribe!
